@@ -23,6 +23,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
+git clone https://github.com/linkease/istore
 
 # Add luci-app-smartdns & smartdns
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
@@ -76,6 +77,11 @@ svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
 #rm -rf ../../customfeeds/luci/themes/luci-theme-argon
 #rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 #cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
+#添加ddnsto
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
+
 
 #修改makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
